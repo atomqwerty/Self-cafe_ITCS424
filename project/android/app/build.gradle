@@ -24,11 +24,15 @@ if (flutterVersionName == null) {
 
 android {
     defaultConfig {
-        minSdkVersion 19
-        multiDexEnabled true
+        applicationId "app.id"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     namespace "com.example.project"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 33
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -49,8 +53,8 @@ android {
         applicationId "com.example.project"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
+        // minSdkVersion flutter.minSdkVersion
+        // targetSdkVersion flutter.targetSdkVersionw
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
