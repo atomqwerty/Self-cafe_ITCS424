@@ -16,7 +16,7 @@ class MyStyle {
           borderRadius: BorderRadius.circular(30),
         ),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // IconButton(
             //   icon: Icon(Icons.arrow_back_ios_new_sharp),
@@ -27,13 +27,7 @@ class MyStyle {
             //   },
             // ),
             // Spacer(),
-            IconButton(
-              icon: const Icon(Icons.favorite),
-              color: MyStyle().color_1, // Set button color to red
-              onPressed: () {
-                // Add favorite button action
-              },
-            ),
+            
             Text(
               title,
               style: const TextStyle(
@@ -42,13 +36,7 @@ class MyStyle {
               ),
             ),
             // Spacer(),
-            IconButton(
-              icon: const Icon(Icons.favorite),
-              color: MyStyle().color_1, // Set button color to red
-              onPressed: () {
-                // Add favorite button action
-              },
-            ),
+           
           ],
         ),
       );

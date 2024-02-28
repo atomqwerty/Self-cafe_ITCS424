@@ -13,60 +13,60 @@ class Noti extends StatefulWidget {
 class _NotiState extends State<Noti> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: MyStyle().color_5,
-        appBar: MyStyle().BuildBar(context, "Notification"),
-        body: ListView.builder(
-          itemCount: notilist.length,
-          itemBuilder: (BuildContext context, int index) {
-            var item = notilist[index];
-            return Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: <Widget>[
-                    Image.network(
-                      item.imageUrl,
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.cover,
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              item.name,
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(item.description),
-                            const Text(
-                              "Promo",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFFAD1457)),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
-        // Uncomment these if you have them defined elsewhere
-        // drawer: Drawer(),
-        // bottomNavigationBar: MyStyle().BuildBotBar(context),
+    return Scaffold(
+      backgroundColor: MyStyle().color_5,
+      appBar: MyStyle().BuildBar(context, "Notification"),
+      body: ListView.builder(
+        itemCount: notilist.length,
+        itemBuilder: BuildCard,
       ),
+      // Uncomment these if you have them defined elsewhere
+      // drawer: Drawer(),
+      // bottomNavigationBar: MyStyle().BuildBotBar(context),
     );
   }
+
+  Widget? BuildCard(BuildContext context, int index) {
+        var item = notilist[index];
+        return Card(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: <Widget>[
+                Image.network(
+                  item.imageUrl,
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          item.name,
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(item.description),
+                        const Text(
+                          "Promo",
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFFAD1457)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      }
 }

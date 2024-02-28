@@ -51,75 +51,73 @@ class _CartState extends State<Cart> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: MyStyle().color_5,
-        appBar: MyStyle().BuildBar(context, "Cart"),
-        body: ListView.builder(
-          itemCount: shoppingList.length,
-          itemBuilder: (BuildContext context, int index) {
-            var item = shoppingList[index];
-            return Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: <Widget>[
-                    Image.network(
-                      item.coffee.imageUrl,
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.cover,
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              item.coffee.name,
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
+    return Scaffold(
+      backgroundColor: MyStyle().color_5,
+      appBar: MyStyle().BuildBar(context, "Cart"),
+      body: ListView.builder(
+        itemCount: shoppingList.length,
+        itemBuilder: (BuildContext context, int index) {
+          var item = shoppingList[index];
+          return Card(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: <Widget>[
+                  Image.network(
+                    item.coffee.imageUrl,
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            item.coffee.name,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
                             ),
-                            Text(item.coffee.description),
-                            Text(
-                              '฿${item.coffee.price}',
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          ),
+                          Text(item.coffee.description),
+                          Text(
+                            '฿${item.coffee.price}',
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(Icons.remove, color: MyStyle().color_4),
-                          onPressed: () => _decrementQuantity(index),
-                        ),
-                        Text('${item.quantity}',
-                            style: const TextStyle(fontSize: 18)),
-                        IconButton(
-                          icon: Icon(Icons.add, color: MyStyle().color_4),
-                          onPressed: () => _incrementQuantity(index),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.remove, color: MyStyle().color_4),
+                        onPressed: () => _decrementQuantity(index),
+                      ),
+                      Text('${item.quantity}',
+                          style: const TextStyle(fontSize: 18)),
+                      IconButton(
+                        icon: Icon(Icons.add, color: MyStyle().color_4),
+                        onPressed: () => _incrementQuantity(index),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-            );
-          },
-        ),
-        // Uncomment these if you have them defined elsewhere
-        // drawer: Drawer(),
-        // bottomNavigationBar: MyStyle().BuildBotBar(context),
+            ),
+          );
+        },
       ),
+      // Uncomment these if you have them defined elsewhere
+      // drawer: Drawer(),
+      // bottomNavigationBar: MyStyle().BuildBotBar(context),
     );
   }
 }
