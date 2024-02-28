@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:project/utility/coffee.dart';
 
@@ -7,6 +8,24 @@ class MyStyle {
   Color color_3 = const Color(0xFFF0F5FA); //second
   Color color_4 = const Color(0xFFFFFFFF);
   Color color_5 = const Color(0xffc5c8cb); //main
+
+  static const String tProfileImage = 'images/Tommy_Shelby.jpg';
+
+  static const String tProfile = 'Profile';
+  static const String tEditProfile = 'Edit Profile';
+  static const String tLogoutDialogHeading = 'Logout';
+  static const String tProfileHeading = 'Guest';
+  static const String tProfileSubHeading = 'Guest@coding.com';
+
+  static const String tMenu5 = 'Logout - 2';
+  static const String tMenu1 = 'Setting';
+  static const String tMenu4 = 'Information';
+  static const String tMenu2 = 'Billing Details';
+  static const String tMenu3 = 'User Management';
+
+  static const String tDelete = 'Delete';
+  static const String tJoined = 'Joined';
+  static const String tJoinedAt = '31 October 2022';
 
   AppBar BuildBar(BuildContext context, String title) => AppBar(
         backgroundColor: MyStyle().color_4, // Set the background color
@@ -27,7 +46,7 @@ class MyStyle {
             //   },
             // ),
             // Spacer(),
-            
+
             Text(
               title,
               style: const TextStyle(
@@ -36,7 +55,6 @@ class MyStyle {
               ),
             ),
             // Spacer(),
-           
           ],
         ),
       );
